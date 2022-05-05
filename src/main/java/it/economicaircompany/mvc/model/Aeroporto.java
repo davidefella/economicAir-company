@@ -29,7 +29,7 @@ public class Aeroporto {
 	private String codice;
 
 	@ManyToMany(mappedBy = "aeroporti")
-	private List<Volo> volo;
+	private List<Volo> voli;
 
 	public Long getId() {
 		return id;
@@ -71,18 +71,18 @@ public class Aeroporto {
 		this.codice = codice;
 	}
 
-	public List<Volo> getVolo() {
-		return volo;
+	public List<Volo> getVoli() {
+		return voli;
 	}
 
-	public void setVolo(List<Volo> volo) {
-		this.volo = volo;
+	public void setVoli(List<Volo> voli) {
+		this.voli = voli;
 	}
 
 	@Override
 	public String toString() {
 		return "Aeroporto [id=" + id + ", nome=" + nome + ", citta=" + citta + ", nazione=" + nazione + ", codice="
-				+ codice + ", volo=" + volo + "]";
+				+ codice + ", volo=" + voli + "]";
 	}
 
 }

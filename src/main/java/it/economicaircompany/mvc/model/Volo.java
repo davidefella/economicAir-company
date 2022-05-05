@@ -28,7 +28,7 @@ public class Volo {
 	@OneToMany(mappedBy = "volo")
 	private List<Prenotazione> prenotazioni;
 
-	@OneToMany
+	@OneToMany()
 	private List<Aeroporto> aeroporti;
 
 	public Long getId() {
