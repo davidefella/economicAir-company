@@ -10,6 +10,7 @@ import it.economicaircompany.mvc.repository.AeroportoRepository;
 
 @Service
 public class AeroportoService {
+	
 	@Autowired
 	AeroportoRepository aeroportoRepository;
 
