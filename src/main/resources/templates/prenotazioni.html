@@ -17,30 +17,46 @@
 
 	<div class="container">
 		<h2>Gestione Prenotazioni</h2>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Codice Prenotazione</th>
-					<th>Codice Volo</th>
-					<th>Posto</th>
-					<th>Descrizione</th>
-					<th>Costo</th>
-				</tr>
-			</thead>
-			<tbody>
-				<div th:each="prenotazione_item: ${listaPrenotazioni}">
-					<tr>
-						<td th:text="${prenotazione_item.getCodice()}"></td>
-						<td th:text="${prenotazione_item.getVolo()} ? ${prenotazione_item.getVolo().getId()} : ''" />
-						<td th:text="${prenotazione_item.getCodicePosto()}"></td>
-						<td th:text="${prenotazione_item.getDescrizione()}"></td>
-						<td th:text="${prenotazione_item.getCostoBiglietto()}"></td>
-					</tr>
-
+		<div>
+			<form action='#' th:action="@{/web/inserisciPrenotazione}" th:object="${prenotazioneRequest}" method='post' class='speaker-form'>
+				<h2 class="title">Inserisci Prenotazione</h2>
+				<label class="control-label col-sm-2" for="codicePosto">Codice posto</label>
+				<div class="col-sm-10">
+					<input class="form-control" name="codicePosto" th:field="*{codicePosto}">
 				</div>
+				<br> <br>
+		</div>
+		<br> <br> <input type="submit" id="submitButton"
+			th:value="Aggiungi">
+		</form>
 
-			</tbody>
-		</table>
+
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Codice Prenotazione</th>
+				<th>Codice Volo</th>
+				<th>Posto</th>
+				<th>Descrizione</th>
+				<th>Costo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<div th:each="prenotazione_item: ${listaPrenotazioni}">
+				<tr>
+					<td th:text="${prenotazione_item.getCodice()}"></td>
+					<td
+						th:text="${prenotazione_item.getVolo()} ? ${prenotazione_item.getVolo().getId()} : ''" />
+					<td th:text="${prenotazione_item.getCodicePosto()}"></td>
+					<td th:text="${prenotazione_item.getDescrizione()}"></td>
+					<td th:text="${prenotazione_item.getCostoBiglietto()}"></td>
+				</tr>
+
+			</div>
+
+		</tbody>
+	</table>
 	</div>
 
 </body>

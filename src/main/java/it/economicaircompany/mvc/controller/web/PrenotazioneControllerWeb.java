@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import it.economicaircompany.mvc.model.web.PrenotazioneRequest;
 import it.economicaircompany.mvc.service.PrenotazioneService;
 
 @Controller
@@ -24,6 +26,16 @@ public class PrenotazioneControllerWeb {
 		ModelAndView modelPrenotazioni = new ModelAndView();
 		modelPrenotazioni.setViewName("prenotazioni");
 		modelPrenotazioni.addObject("listaPrenotazioni", prenotazioneService.getAllPrenotazioni());
+		modelPrenotazioni.addObject("prenotazioneRequest",new PrenotazioneRequest()); 
 		return modelPrenotazioni;
+	}
+	
+	@PostMapping("/inserisciPrenotazione")
+	public ModelAndView aggiungiPrenotazione(PrenotazioneRequest prenotazioneRequest) {
+
+		logger.info(prenotazioneRequest.toString()); // Inserire in Service Layer 
+		ModelAndView model = new ModelAndView();
+		model.setViewName("prenotazioni");
+		return model;
 	}
 }
