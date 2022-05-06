@@ -22,7 +22,7 @@ class AeroportoServiceTest {
 
 	@Test
 	void testInserisciAeroporto() {
-		assertEquals(aeroportoService.getAllAeroporto().size(), 0);
+		assertEquals(aeroportoService.getAllAeroporti().size(), 0);
 		Aeroporto a = new Aeroporto();
 		a.setCitta("HappyLand");
 		a.setCodice("123");
@@ -46,7 +46,7 @@ class AeroportoServiceTest {
 		vList.add(v);
 		a.setVoli(vList);
 		aeroportoService.salvaAeroporto(a);
-		assertEquals(aeroportoService.getAllAeroporto().size(), 1);
+		assertEquals(aeroportoService.getAllAeroporti().size(), 1);
 	}
 
 }

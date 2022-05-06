@@ -14,7 +14,7 @@ public class VoloService {
 	@Autowired
 	VoloRepository voloRepository;
 
-	public List<Volo> getAllVolo() {
+	public List<Volo> getAllVoli() {
 		return voloRepository.findAll();
 	}
 
