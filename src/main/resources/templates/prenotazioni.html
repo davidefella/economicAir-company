@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>Bootstrap Example</title>
+<title>Economic Air Company</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -31,7 +31,7 @@
 				<div th:each="prenotazione_item: ${listaPrenotazioni}">
 					<tr>
 						<td th:text="${prenotazione_item.getCodice()}"></td>
-						<td th:text="${prenotazione_item.getVolo()} ? ${prenotazione_item.getVolo().getCodice()} : ''" />
+						<td th:text="${prenotazione_item.getVolo()} ? ${prenotazione_item.getVolo().getId()} : ''" />
 						<td th:text="${prenotazione_item.getCodicePosto()}"></td>
 						<td th:text="${prenotazione_item.getDescrizione()}"></td>
 						<td th:text="${prenotazione_item.getCostoBiglietto()}"></td>
