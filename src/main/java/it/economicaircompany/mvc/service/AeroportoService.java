@@ -10,10 +10,11 @@ import it.economicaircompany.mvc.repository.AeroportoRepository;
 
 @Service
 public class AeroportoService {
+	
 	@Autowired
 	AeroportoRepository aeroportoRepository;
 
-	public List<Aeroporto> getAllAeroporto() {
+	public List<Aeroporto> getAllAeroporti() {
 		return aeroportoRepository.findAll();
 	}
 

@@ -3,15 +3,18 @@ package it.economicaircompany.mvc.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.economicaircompany.mvc.model.Volo;
 import it.economicaircompany.mvc.repository.VoloRepository;
 
+@Service
 public class VoloService {
+	
 	@Autowired
 	VoloRepository voloRepository;
 
-	public List<Volo> getAllVolo() {
+	public List<Volo> getAllVoli() {
 		return voloRepository.findAll();
 	}
 
