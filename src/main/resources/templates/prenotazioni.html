@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
-	<title>Bootstrap Example</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -25,20 +28,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>AB001</td>
-					<td>ZFL-10</td>
-					<td>A51</td>
-					<td>Posto Finestrino</td>
-					<td>9.99</td>
-				</tr>
-				<tr>
-					<td>AB001</td>
-					<td>ZFL-10</td>
-					<td>A51</td>
-					<td>Posto Finestrino</td>
-					<td>9.99</td>
-				</tr>
+				<div th:each="prenotazione_item: ${listaPrenotazioni}">
+					<tr>
+						<td th:text="${prenotazione_item.getCodice()}"></td>
+						<td th:text="${prenotazione_item.getVolo()} ? ${prenotazione_item.getVolo().getCodice()} : ''" />
+						<td th:text="${prenotazione_item.getCodicePosto()}"></td>
+						<td th:text="${prenotazione_item.getDescrizione()}"></td>
+						<td th:text="${prenotazione_item.getCostoBiglietto()}"></td>
+					</tr>
+
+				</div>
+
 			</tbody>
 		</table>
 	</div>
