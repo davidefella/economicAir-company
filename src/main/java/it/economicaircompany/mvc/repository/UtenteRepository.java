@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import it.economicaircompany.mvc.model.Utente;
 
-public interface UtenteReporitory extends JpaRepository<Utente,Long>{
+public interface UtenteRepository extends JpaRepository<Utente,Long>{
 
 }
