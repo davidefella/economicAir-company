@@ -30,16 +30,31 @@ public class PopolaDB implements CommandLineRunner {
 		aeroportoFiumicino.setCitta("Fiumicino");
 		aeroportoFiumicino.setCodice("ABC");
 		aeroportoFiumicino.setNazione("ITALIA");
-		aeroportoFiumicino.setNome("Aeroporto internazionale Leonardo da Vinci");
+		aeroportoFiumicino.setNome("Leonardo-da-Vinci");
+		
+		Aeroporto aeroportoNizza = new Aeroporto();
+		aeroportoNizza.setCitta("Nizza");
+		aeroportoNizza.setCodice("FGH");
+		aeroportoNizza.setNazione("Francia");
+		aeroportoNizza.setNome("Raffaello");
 
 		aeroportoService.salvaAeroporto(aeroportoFiumicino);
+		aeroportoService.salvaAeroporto(aeroportoNizza);
 
 		Volo volo1 = new Volo();
-		volo1.setAeroportoArrivo(aeroportoFiumicino);
+		volo1.setAeroportoArrivo(aeroportoNizza);
 		volo1.setAeroportoPartenza(aeroportoFiumicino);
 		volo1.setDataArrivo(LocalDateTime.now());
 		volo1.setDataPartenza(LocalDateTime.now());
+		
+		Volo volo2 = new Volo();
+		volo2.setAeroportoArrivo(aeroportoFiumicino);
+		volo2.setAeroportoPartenza(aeroportoNizza);
+		volo2.setDataArrivo(LocalDateTime.now());
+		volo2.setDataPartenza(LocalDateTime.now());
+		
 		voloService.salvaVolo(volo1);
+		voloService.salvaVolo(volo2);
 
 		Prenotazione prenotazione1 = new Prenotazione();
 		prenotazione1.setCodice("001");
@@ -47,6 +62,7 @@ public class PopolaDB implements CommandLineRunner {
 		prenotazione1.setCostoBiglietto(9.99);
 		prenotazione1.setDescrizione("Posto finestrino");
 		prenotazione1.setVolo(volo1);
+		
 		prenotazioneService.salvaPrenotazione(prenotazione1);
 	}
 }

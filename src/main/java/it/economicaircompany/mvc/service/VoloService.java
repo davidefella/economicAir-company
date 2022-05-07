@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.economicaircompany.mvc.model.Aeroporto;
 import it.economicaircompany.mvc.model.Volo;
 import it.economicaircompany.mvc.repository.VoloRepository;
 
@@ -32,5 +33,9 @@ public class VoloService {
 
 	public void deleteVolo(Long id) {
 		voloRepository.deleteById(id);
+	}
+	
+	public List<Volo> getVoliByAeroportoArrivo(Aeroporto aeroportoArrivo) {
+		return voloRepository.getVoliByAeroportoArrivo(aeroportoArrivo);
 	}
 }

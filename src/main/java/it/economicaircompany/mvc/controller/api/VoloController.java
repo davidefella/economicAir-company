@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.economicaircompany.mvc.model.Aeroporto;
 import it.economicaircompany.mvc.model.Volo;
 import it.economicaircompany.mvc.service.VoloService;
 
@@ -32,19 +33,24 @@ public class VoloController {
 		return voloService.getAllVoli();
 	}
 	
-	@PostMapping("inserisciVolo")
+	@PostMapping("/inserisciVolo")
 	public Volo inserisciVolo(@RequestBody Volo volo) {
 		return voloService.salvaVolo(volo);
 	}
 	
-	@DeleteMapping("eliminaVolo")
+	@DeleteMapping("/eliminaVolo")
 	public HttpStatus deleteVolo(@RequestParam Long idVolo) {
 		voloService.deleteVolo(idVolo);
 		return HttpStatus.OK;
 	}
 	
-	@PutMapping("aggiornaVolo")
+	@PutMapping("/aggiornaVolo")
 	public Volo aggiornaVolo(@RequestBody Volo volo) {
 		return voloService.updateVolo(volo);
+	}
+	
+	@GetMapping("/voliByAeroportoArrivo")
+	public List<Volo> getVoliByAeroportoArrivo(@RequestParam Aeroporto aeroportoArrivo) {
+		return voloService.getVoliByAeroportoArrivo(aeroportoArrivo);
 	}
 }

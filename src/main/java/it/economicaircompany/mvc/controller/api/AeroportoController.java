@@ -47,4 +47,14 @@ public class AeroportoController {
 	public Aeroporto aggiornaAeroporto(@RequestBody Aeroporto aeroporto) {
 		return aeroportoService.updateAeroporto(aeroporto);
 	}
+	
+	@GetMapping("/aeroportiByNome")
+	public List<Aeroporto> getAeroportiByNome(@RequestParam String nome){
+		return aeroportoService.getAeroportoByNome(nome);
+	}
+	
+	@GetMapping("aeroportoByID")
+	public Aeroporto getAeroportoByID(@RequestParam Long idAeroporto) {
+		return aeroportoService.getAeroportoByID(idAeroporto);
+	}
 }
