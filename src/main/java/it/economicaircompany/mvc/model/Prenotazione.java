@@ -28,6 +28,9 @@ public class Prenotazione {
 
 	@ManyToOne
 	private Volo volo;
+	
+	@ManyToOne
+	private Utente utente;
 
 	public Long getId() {
 		return id;
@@ -75,6 +78,14 @@ public class Prenotazione {
 
 	public void setVolo(Volo volo) {
 		this.volo = volo;
+	}	
+	
+	public Utente getUtente() {
+		return utente;
+	}
+
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 
 	@Override

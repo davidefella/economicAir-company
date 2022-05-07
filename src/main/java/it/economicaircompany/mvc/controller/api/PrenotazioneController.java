@@ -48,4 +48,8 @@ public class PrenotazioneController {
 		return prenotazioneService.updatePrenotazione(prenotazione);
 	}
 	
+	@GetMapping("/sumBiglietti")
+	public double getSumBiglietti() {
+		return prenotazioneService.getSumBiglietti();
+	}
 }
