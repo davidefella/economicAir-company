@@ -1,5 +1,6 @@
 package it.economicaircompany.mvc.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,9 @@ public class VoloService {
 	
 	public List<Volo> getVoliByAeroportoArrivo(Aeroporto aeroportoArrivo) {
 		return voloRepository.getVoliByAeroportoArrivo(aeroportoArrivo);
+	}
+	
+	public List<Volo> getVoliByData(LocalDateTime dataPartenza, LocalDateTime dataArrivo) {
+		return voloRepository.findByStartDateBetween(dataPartenza, dataArrivo);
 	}
 }
