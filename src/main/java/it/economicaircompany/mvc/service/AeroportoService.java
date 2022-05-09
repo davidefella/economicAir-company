@@ -33,4 +33,12 @@ public class AeroportoService {
 	public void deleteAeroporto(Long id) {
 		aeroportoRepository.deleteById(id);
 	}
+	
+	public Aeroporto getAeroportoByID(Long id) {
+		return aeroportoRepository.getById(id);
+	}
+	
+	public List<Aeroporto> getAeroportoByNome(String nome) {
+		return aeroportoRepository.findAeroportoByNome(nome);
+	}
 }

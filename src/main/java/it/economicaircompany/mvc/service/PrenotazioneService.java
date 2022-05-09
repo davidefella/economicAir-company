@@ -33,4 +33,11 @@ public class PrenotazioneService {
 	public void deletePrenotazione(Long id) {
 		prenotazioneRepository.deleteById(id);
 	}
+	
+	public double getSumBiglietti() {
+		double sum = 0;
+		for(Prenotazione p : getAllPrenotazioni())
+			sum+=p.getCostoBiglietto();
+		return sum;
+	}
 }
