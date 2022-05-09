@@ -13,5 +13,5 @@ public interface VoloRepository extends JpaRepository<Volo, Long> {
 	
 	public List<Volo> getVoliByAeroportoArrivo(Aeroporto aeroportoArrivo);
 	
-	public List<Volo> findByStartDateBetween(LocalDateTime dataPartenza, LocalDateTime dataArrivo);
+	public List<Volo> findByDataPartenzaBetween(LocalDateTime dataPartenza, LocalDateTime dataArrivo);
 }
