@@ -65,8 +65,8 @@ public class PopolaDB implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		popolaAeroportiByFile("G:\\Uni\\Spring\\economicAir-company\\prova.csv");
-
+		popolaAeroportiByFile("prova.csv");
+		
 		Aeroporto aeroportoFiumicino = new Aeroporto();
 		aeroportoFiumicino.setCitta("Fiumicino");
 		aeroportoFiumicino.setCodice("ABC");

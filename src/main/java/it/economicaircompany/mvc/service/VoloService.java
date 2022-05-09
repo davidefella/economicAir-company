@@ -41,6 +41,6 @@ public class VoloService {
 	}
 	
 	public List<Volo> getVoliByData(LocalDateTime dataPartenza, LocalDateTime dataArrivo) {
-		return voloRepository.findByStartDateBetween(dataPartenza, dataArrivo);
+		return voloRepository.findByDataPartenzaBetween(dataPartenza, dataArrivo);
 	}
 }
