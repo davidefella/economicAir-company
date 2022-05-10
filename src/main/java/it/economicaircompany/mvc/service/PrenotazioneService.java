@@ -3,6 +3,8 @@ package it.economicaircompany.mvc.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import it.economicaircompany.mvc.model.Prenotazione;
@@ -39,5 +41,9 @@ public class PrenotazioneService {
 		for(Prenotazione p : getAllPrenotazioni())
 			sum+=p.getCostoBiglietto();
 		return sum;
+	}
+	
+	public Page<Prenotazione> findByVoloAeroportoPartenzaCodice(Pageable page, String codice) {
+		return prenotazioneRepository.findByVoloAeroportoPartenzaCodice(page, codice);
 	}
 }

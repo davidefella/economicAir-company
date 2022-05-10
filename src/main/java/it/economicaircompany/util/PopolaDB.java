@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -105,5 +104,18 @@ public class PopolaDB implements CommandLineRunner {
 		prenotazione1.setVolo(volo1);
 
 		prenotazioneService.salvaPrenotazione(prenotazione1);
+		
+		Prenotazione p = new Prenotazione();
+		for(int i=0; i<11; i++) {
+			p = new Prenotazione();
+			p.setVolo(volo1);
+			p.setCodice("0"+i);
+			p.setCodicePosto("0"+i);
+			p.setCostoBiglietto(i);
+			p.setDescrizione(""+i);
+			prenotazioneService.salvaPrenotazione(p);
+		}
+		
+		
 	}
 }
